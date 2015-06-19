@@ -7,7 +7,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
       image: '=',
       resultImage: '=',
 
-      changeOnFly: '?=',
+      changeOnFly: '=?',
       areaType: '@?',
       areaMinSize: '=?',
       areaDetails: '=?',

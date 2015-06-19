@@ -723,7 +723,7 @@
       scope: {
         image: "=",
         resultImage: "=",
-        changeOnFly: "?=",
+        changeOnFly: "=?",
         areaType: "@?",
         areaMinSize: "=?",
         areaDetails: "=?",

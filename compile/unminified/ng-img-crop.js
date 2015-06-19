@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, June 19th, 2015, 4:05:01 PM
+ * Generated at Friday, June 19th, 2015, 4:07:52 PM
  */
 (function() {
 'use strict';
@@ -1777,7 +1777,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
       image: '=',
       resultImage: '=',
 
-      changeOnFly: '?=',
+      changeOnFly: '=?',
       areaType: '@?',
       areaMinSize: '=?',
       areaDetails: '=?',
