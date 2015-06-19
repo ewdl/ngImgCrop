@@ -4,7 +4,7 @@
 
 'use strict';
 
-crop.service('cropEXIF', [function ($log) {
+crop.service('cropEXIF', ['$log', function ($log) {
 
   var ExifTags = this.Tags = {
 
