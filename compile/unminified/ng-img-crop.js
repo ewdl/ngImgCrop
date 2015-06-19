@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, June 19th, 2015, 3:47:44 PM
+ * Generated at Friday, June 19th, 2015, 4:05:01 PM
  */
 (function() {
 'use strict';
@@ -1777,18 +1777,18 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
       image: '=',
       resultImage: '=',
 
-      changeOnFly: '=',
-      areaType: '@',
-      areaMinSize: '=',
-      areaDetails: '=',
-      resultImageSize: '=',
-      resultImageFormat: '@',
-      resultImageQuality: '=',
+      changeOnFly: '?=',
+      areaType: '@?',
+      areaMinSize: '=?',
+      areaDetails: '=?',
+      resultImageSize: '=?',
+      resultImageFormat: '@?',
+      resultImageQuality: '=?',
 
-      onChange: '&',
-      onLoadBegin: '&',
-      onLoadDone: '&',
-      onLoadError: '&'
+      onChange: '&?',
+      onLoadBegin: '&?',
+      onLoadDone: '&?',
+      onLoadError: '&?'
     },
     template: '<canvas></canvas>',
     controller: ['$scope', function ($scope) {

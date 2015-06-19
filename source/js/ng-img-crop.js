@@ -7,18 +7,18 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
       image: '=',
       resultImage: '=',
 
-      changeOnFly: '=',
-      areaType: '@',
-      areaMinSize: '=',
-      areaDetails: '=',
-      resultImageSize: '=',
-      resultImageFormat: '@',
-      resultImageQuality: '=',
+      changeOnFly: '?=',
+      areaType: '@?',
+      areaMinSize: '=?',
+      areaDetails: '=?',
+      resultImageSize: '=?',
+      resultImageFormat: '@?',
+      resultImageQuality: '=?',
 
-      onChange: '&',
-      onLoadBegin: '&',
-      onLoadDone: '&',
-      onLoadError: '&'
+      onChange: '&?',
+      onLoadBegin: '&?',
+      onLoadDone: '&?',
+      onLoadError: '&?'
     },
     template: '<canvas></canvas>',
     controller: ['$scope', function ($scope) {

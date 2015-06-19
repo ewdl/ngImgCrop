@@ -723,17 +723,17 @@
       scope: {
         image: "=",
         resultImage: "=",
-        changeOnFly: "=",
-        areaType: "@",
-        areaMinSize: "=",
-        areaDetails: "=",
-        resultImageSize: "=",
-        resultImageFormat: "@",
-        resultImageQuality: "=",
-        onChange: "&",
-        onLoadBegin: "&",
-        onLoadDone: "&",
-        onLoadError: "&"
+        changeOnFly: "?=",
+        areaType: "@?",
+        areaMinSize: "=?",
+        areaDetails: "=?",
+        resultImageSize: "=?",
+        resultImageFormat: "@?",
+        resultImageQuality: "=?",
+        onChange: "&?",
+        onLoadBegin: "&?",
+        onLoadDone: "&?",
+        onLoadError: "&?"
       },
       template: "<canvas></canvas>",
       controller: ["$scope", function (e) {

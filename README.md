@@ -1,6 +1,6 @@
 # ngImgCrop
 
-Simple Image Crop directive for AngularJS. Enables to crop a circle or a square out of an image.
+A fork of ngImgCrop, a Simple Image Crop directive for AngularJS. Enables to crop a circle or a square out of an image.
 
 ## Screenshots
 
@@ -96,10 +96,12 @@ The following code enables to select an image using a file input and crop it. Th
 <body ng-app="app" ng-controller="Ctrl">
   <div>Select an image file: <input type="file" id="fileInput" /></div>
   <div class="cropArea">
-    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+    <img-crop image="myImage" result-image="myCroppedImage" area-details="cropDetails"></img-crop>
   </div>
   <div>Cropped Image:</div>
   <div><img ng-src="{{myCroppedImage}}" /></div>
+  <div>Crop details:</div>
+  <p>{{cropDetails}}</div>
 </body>
 </html>
 ```
@@ -113,13 +115,14 @@ The following code enables to select an image using a file input and crop it. Th
    [change-on-fly="{boolean}"]
    [area-type="{circle|square}"]
    [area-min-size="{number}"]
+   [area-details="{object}"]
    [result-image-size="{number}"]
    [result-image-format="{string}"]
    [result-image-quality="{number}"]
    [on-change="{expression}"]
-   [on-load-begin="{expression"]
-   [on-load-done="{expression"]
-   [on-load-error="{expression"]
+   [on-load-begin="{expression}"]
+   [on-load-done="{expression}"]
+   [on-load-error="{expression}"]
 ></img-crop>
 ```
 
@@ -138,6 +141,10 @@ Assignable angular expression to data-bind to. NgImgCrop puts a data uri of a cr
 ### area-type
 
 *Optional*. Type of the crop area. Possible values: circle|square. Default: circle.
+
+### area-details
+
+*Optional*. Details of the crop area. An object with properties "x", "y", "size", "image":{"width","height"},"canvas":{"width","height"}}.
 
 ### area-min-size
 
@@ -174,5 +181,5 @@ Assignable angular expression to data-bind to. NgImgCrop puts a data uri of a cr
 
 ## License
 
-See the [LICENSE](https://github.com/alexk111/ngImgCrop/blob/master/LICENSE) file.
+See the [LICENSE](https://github.com/Javarome/ngImgCrop/blob/master/LICENSE) file.
 
