@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, June 19th, 2015, 3:22:45 PM
+ * Generated at Friday, June 19th, 2015, 3:47:44 PM
  */
 (function() {
 'use strict';
@@ -593,7 +593,7 @@ crop.factory('cropCanvas', [function() {
  * EXIF service is based on the exif-js library (https://github.com/jseidelin/exif-js)
  */
 
-crop.service('cropEXIF', [function ($log) {
+crop.service('cropEXIF', ['$log', function ($log) {
 
   var ExifTags = this.Tags = {
 

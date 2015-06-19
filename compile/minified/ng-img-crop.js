@@ -184,7 +184,7 @@
         c.save(), c.strokeStyle = h.areaOutline, c.lineWidth = 2, c.beginPath(), r(c, t, i), c.stroke(), c.clip(), i > 0 && c.drawImage(e, a * s, n * o, i * s, i * o, a, n, i, i), c.beginPath(), r(c, t, i), c.stroke(), c.clip(), c.restore()
       }
     }
-  }]), e.service("cropEXIF", [function (e) {
+  }]), e.service("cropEXIF", ["$log", function (e) {
     function t(e) {
       return !!e.exifdata
     }
