@@ -5,7 +5,7 @@
 'use strict';
 
 crop.service('cropEXIF', [function() {
-  var debug = false;
+  var debug = true;
 
   var ExifTags = this.Tags = {
 
