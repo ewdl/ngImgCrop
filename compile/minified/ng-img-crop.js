@@ -237,7 +237,7 @@
       if (e.debug("findEXIFinJPEG: Got file of length %o", t.byteLength), 255 != i.getUint8(0) || 216 != i.getUint8(1))return e.error("Not a valid JPEG"), !1;
       for (var r, s = 2, o = t.byteLength; o > s;) {
         if (255 != i.getUint8(s))return e.error("Not a valid marker at offset " + s + ", found: " + i.getUint8(s)), !1;
-        if (r = i.getUint8(s + 1), e.debug("Marker=%o", r), 225 == r)return e("Found APP1 marker"), g(i, s + 4, i.getUint16(s + 2) - 2);
+        if (r = i.getUint8(s + 1), e.debug("Marker=%o", r), 225 == r)return e.debug("Found APP1 marker"), g(i, s + 4, i.getUint16(s + 2) - 2);
         s += 2 + i.getUint16(s + 2)
       }
     }

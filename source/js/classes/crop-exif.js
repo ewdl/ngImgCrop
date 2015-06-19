@@ -403,7 +403,7 @@ crop.service('cropEXIF', ['$log', function ($log) {
       // but we're only looking for 0xFFE1 for EXIF data
 
       if (marker == 225) {
-        $log('Found APP1 marker');
+        $log.debug('Found APP1 marker');
 
         return readEXIFData(dataView, offset + 4, dataView.getUint16(offset + 2) - 2);
 

@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Friday, June 19th, 2015, 4:07:52 PM
+ * Generated at Friday, June 19th, 2015, 4:17:06 PM
  */
 (function() {
 'use strict';
@@ -991,7 +991,7 @@ crop.service('cropEXIF', ['$log', function ($log) {
       // but we're only looking for 0xFFE1 for EXIF data
 
       if (marker == 225) {
-        $log('Found APP1 marker');
+        $log.debug('Found APP1 marker');
 
         return readEXIFData(dataView, offset + 4, dataView.getUint16(offset + 2) - 2);
 
