@@ -77,6 +77,13 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
           scope.areaDetails = cropHost.getAreaDetails();
         }));
 
+      // Listen to window resize events
+      angular.element(document).ready(function () {
+        window.addEventListener('resize', function () {
+          scope.$apply();
+        });
+      });
+
       // Sync CropHost with Directive's options
       scope.$watch('image', function () {
         cropHost.setNewImageSource(scope.image);
@@ -109,6 +116,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
         },
         function (value) {
           cropHost.setMaxDimensions(value[0], value[1]);
+          scope.areaDetails = cropHost.getAreaDetails();
           updateResultImage(scope);
         },
         true

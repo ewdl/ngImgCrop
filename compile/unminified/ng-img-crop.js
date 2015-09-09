@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Wednesday, September 9th, 2015, 9:32:42 PM
+ * Generated at Wednesday, September 9th, 2015, 10:42:52 PM
  */
 (function() {
 'use strict';
@@ -1847,6 +1847,13 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
           scope.areaDetails = cropHost.getAreaDetails();
         }));
 
+      // Listen to window resize events
+      angular.element(document).ready(function () {
+        window.addEventListener('resize', function () {
+          scope.$apply();
+        });
+      });
+
       // Sync CropHost with Directive's options
       scope.$watch('image', function () {
         cropHost.setNewImageSource(scope.image);
@@ -1879,6 +1886,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
         },
         function (value) {
           cropHost.setMaxDimensions(value[0], value[1]);
+          scope.areaDetails = cropHost.getAreaDetails();
           updateResultImage(scope);
         },
         true
