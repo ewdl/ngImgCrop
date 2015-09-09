@@ -5,7 +5,7 @@
  * Copyright (c) 2015 Alex Kaul
  * License: MIT
  *
- * Generated at Wednesday, September 9th, 2015, 10:42:52 PM
+ * Generated at Wednesday, September 9th, 2015, 10:51:14 PM
  */
 (function() {
 'use strict';
@@ -1703,12 +1703,22 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
         };
 
         this.getAreaDetails = function () {
+            var size = theArea.getSize(), offset = size / 2,
+                left = theArea.getX() - offset,
+                top = theArea.getY() - offset;
             return {
-                x: theArea.getX(),
-                y: theArea.getY(),
-                size: theArea.getSize(),
-                image: {width: theArea.getImage().width, height: theArea.getImage().height},
-                canvas: {width: ctx.canvas.width, height: ctx.canvas.height}
+              left: left,
+              right: left + size,
+              top: top,
+              bottom: top + size,
+              image: {
+                width: theArea.getImage().width,
+                height: theArea.getImage().height
+              },
+              canvas: {
+                width: ctx.canvas.width,
+                height: ctx.canvas.height
+              }
             };
         };
 

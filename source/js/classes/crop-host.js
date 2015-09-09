@@ -339,13 +339,23 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
         };
 
         this.getAreaDetails = function () {
-            return {
-                x: theArea.getX(),
-                y: theArea.getY(),
-                size: theArea.getSize(),
-                image: {width: theArea.getImage().width, height: theArea.getImage().height},
-                canvas: {width: ctx.canvas.width, height: ctx.canvas.height}
-            };
+          var size = theArea.getSize(), offset = size / 2,
+              left = theArea.getX() - offset,
+              top = theArea.getY() - offset;
+          return {
+            left: left,
+            right: left + size,
+            top: top,
+            bottom: top + size,
+            image: {
+              width: theArea.getImage().width,
+              height: theArea.getImage().height
+            },
+            canvas: {
+              width: ctx.canvas.width,
+              height: ctx.canvas.height
+            }
+          };
         };
 
         /* Life Cycle begins */
