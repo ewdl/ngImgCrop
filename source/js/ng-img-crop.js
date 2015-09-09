@@ -15,10 +15,10 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
       resultImageFormat: '@?',
       resultImageQuality: '=?',
 
-      onChange: '&?',
-      onLoadBegin: '&?',
-      onLoadDone: '&?',
-      onLoadError: '&?'
+      onChange: '&',
+      onLoadBegin: '&',
+      onLoadDone: '&',
+      onLoadError: '&'
     },
     template: '<canvas></canvas>',
     controller: ['$scope', function ($scope) {
