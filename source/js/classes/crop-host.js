@@ -339,7 +339,7 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
         };
 
         this.getAreaDetails = function () {
-          var size = theArea.getSize(), offset = size / 2,
+          var size = theArea.getSize(), offset = Math.round(size / 2),
               left = theArea.getX() - offset,
               top = theArea.getY() - offset;
           return {
