@@ -151,7 +151,9 @@ gulp.task('watch', function(){
     Config.paths.compileUnminified.js + '/**/*.js',
     Config.testPage
   ], function(evt){
-    refresh_lr.changed(evt.path);
+    if (refresh_lr) {
+      refresh_lr.changed(evt.path);
+    }
   });
 });
 
