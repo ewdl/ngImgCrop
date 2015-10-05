@@ -22,6 +22,12 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
         return {top: Math.round(top), left: Math.round(left)};
     };
 
+    var bound = function (value, min, max) {
+        if (value <= min) return min;
+        if (value >= max) return max;
+        return value;
+    };
+
     return function (elCanvas, opts, events) {
         /* PRIVATE VARIABLES */
 
@@ -340,22 +346,18 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
 
         this.getAreaDetails = function () {
           var size = theArea.getSize(), offset = Math.round(size / 2),
+              image = theArea.getImage(), canvas = ctx.canvas,
+              ratio = image.height / canvas.height,
+              sizeRatio = size * ratio,
               left = theArea.getX() - offset,
-              top = theArea.getY() - offset;
-          return {
-            left: left,
-            right: left + size,
-            top: top,
-            bottom: top + size,
-            image: {
-              width: theArea.getImage().width,
-              height: theArea.getImage().height
-            },
-            canvas: {
-              width: ctx.canvas.width,
-              height: ctx.canvas.height
-            }
-          };
+              top = theArea.getY() - offset,
+              details = { };
+
+          details.left = bound(left * ratio, 0, image.width - sizeRatio);
+          details.right = bound(details.left + sizeRatio, sizeRatio, image.width);
+          details.top = bound(top * ratio, 0, image.height - sizeRatio);
+          details.bottom = bound(details.top + sizeRatio, sizeRatio, image.height);
+          return details;
         };
 
         /* Life Cycle begins */
